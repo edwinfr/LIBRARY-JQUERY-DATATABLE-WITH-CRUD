@@ -44,15 +44,18 @@
 					<input type="hidden" name="action" id="action" value="insert" />
 					<input type="hidden" name="hidden_id" id="hidden_id" />
 					<input type="submit" name="form_action" id="form_action" class="btn btn-info" value="Guardar" />
+					<input type="button" name="cancel" id="cancel" class="btn btn-info" value="Cancelar" />
 				</div>
 			</form>
 		</div>
 		
-		<div id="action_alert" title="Action">
+		<div id="action_alert" title="Accion">
 			
 		</div>
+
 		
-		<div id="delete_confirmation" title="Confirmation">
+		
+		<div id="delete_confirmation" title="Confirmacion">
 		<p>Are you sure you want to Delete this data?</p>
 		</div>
 		
@@ -91,6 +94,10 @@ $(document).ready(function(){
 		$('#user_form')[0].reset();
 		$('#form_action').attr('disabled', false);
 		$("#user_dialog").dialog('open');
+	});
+
+	$('#cancel').click(function(){
+		$("#user_dialog").dialog('close');
 	});
 	//controlar y validar formulario
 	$('#user_form').on('submit', function(event){
@@ -219,7 +226,7 @@ $(document).ready(function(){
 					}
 				});
 			},
-			Cancel : function(){
+			Cancelar : function(){
 				$(this).dialog('close');
 			}
 		}	
