@@ -27,23 +27,6 @@ if(isset($_POST["action"]))
 	}
 	if($_POST["action"] == "update")
 	{
-		/*$query = "
-		SELECT * FROM tbl_sample WHERE id = '".$_POST["hidden_id"]."'
-		";
-		$statement = $connect->prepare($query);
-		$statement->execute();
-		$result = $statement->fetchAll();
-		foreach($result as $row)
-		{
-			$out['first_name'] = $row['first_name'];
-			$out['salary'] = $row['salary'];
-			$out['email'] = $row['email'];
-		}
-		
-		if($out['first_name']==$_POST["first_name"]&&$out['salary']==$_POST["salary"]&&$out['email']==$_POST["email"]){
-			echo '<p>No realizo ningun cambio</p>';
-		}
-		else{*/
 			$query = "
 			UPDATE tbl_sample 
 			SET first_name = '".$_POST["first_name"]."', 
