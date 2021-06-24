@@ -50,7 +50,7 @@
 		</div>
 		
 		<div id="action_alert" title="Accion">
-			
+		<input type="button" name="_aceptar" id="aceptar" class="btn btn-info" value="aceptar" />
 		</div>
 
 		
@@ -181,7 +181,12 @@ $(document).ready(function(){
 	});
 	
 	$('#action_alert').dialog({
-		autoOpen:false
+		autoOpen:false,
+		buttons:{
+			Ok : function(){
+				$(this).dialog('close');
+			}
+		}
 	});
 	
 	$(document).on('click', '.edit', function(){
