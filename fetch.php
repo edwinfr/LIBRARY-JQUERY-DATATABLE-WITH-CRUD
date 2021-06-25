@@ -1,3 +1,4 @@
+
 <?php
 
 //fetch.php
@@ -50,4 +51,5 @@ else
 }
 $output .= '</table>';
 echo $output;
+
 ?>
