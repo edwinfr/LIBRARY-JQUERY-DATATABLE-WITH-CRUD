@@ -9,9 +9,11 @@ include("database_connection.php");?>
 		<script src="jquery.min.js"></script>
 		<script src="typeahead.bundle.js"></script>
 		<script src="jquery-ui.js"></script>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<!--<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    </head>  
+   --> 
+   <script src="paginate.js" type="text/javascript"></script>
+</head>  
     <body>  
         <div class="container">
 			<br />
@@ -73,8 +75,9 @@ include("database_connection.php");?>
 
 
 
-<script src="pagination.js" type="text/javascript"></script>
-<script>  
+<script> 
+
+
 $(document).ready(function(){  
 
 	load_data();
@@ -82,26 +85,37 @@ $(document).ready(function(){
 function load_data()
 	{
 //		location.href = "index.php";
-var key = $( "#serch" ).val();
+//var key = $( "#serch" ).val();
 		$.ajax({
 			url:"fetch.php",
 			method:"POST",
-			data:{key:key},
+			//data:{key:key},
 			success:function(data)
 			{
 				//$this.html();
 				//alert(data)
 				$("#user_data").html(data);
+				let options = {
+        numberPerPage:4, //Cantidad de datos por pagina
+        goBar:true, //Barra donde puedes digitar el numero de la pagina al que quiere ir
+        pageCounter:true, //Contador de paginas, en cual estas, de cuantas paginas
+    };
+
+    let filterOptions = {
+        el:'#serch' //Caja de texto para filtrar, puede ser una clase o un ID
+    };
+
+    paginate.init('#teble',options,filterOptions);
+
 			}
 		});
 	}
 
-	
 
 
 
 
-$( "#serch" ).keyup(function(event) {
+/*$( "#serch" ).keyup(function(event) {
 
 	var key = $( "#serch" ).val();
 	//alert(key);	
@@ -116,7 +130,7 @@ $( "#serch" ).keyup(function(event) {
 				$("#user_data").html(data);
 			}
 		});
-});
+});*/
 
 	
 	$("#user_dialog").dialog({
@@ -223,9 +237,10 @@ $( "#serch" ).keyup(function(event) {
 		buttons:{
 			Ok : function(){
 				$(this).dialog('close');
-				$( "#serch" ).val("");
-				load_data();
-				//location.href = "index.php";
+				//$( "#serch" ).val("");
+				//$("#user_data").html("");
+				//load_data();
+				location.href = "index.php";
 			}
 		}
 	});
