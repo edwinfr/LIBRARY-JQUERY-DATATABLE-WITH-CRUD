@@ -25,6 +25,7 @@ if(isset($_POST["action"]))
 		}
 		echo json_encode($output);
 	}
+
 	if($_POST["action"] == "update")
 	{
 			$query = "

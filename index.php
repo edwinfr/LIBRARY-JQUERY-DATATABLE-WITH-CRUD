@@ -7,7 +7,7 @@ include("database_connection.php");?>
 		<link rel="stylesheet" href="jquery-ui.css">
         <link rel="stylesheet" href="bootstrap.min.css" />
 		<script src="jquery.min.js"></script>
-		  
+		<script src="typeahead.bundle.js"></script>
 		<script src="jquery-ui.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
@@ -21,6 +21,11 @@ include("database_connection.php");?>
 			<div align="right" style="margin-bottom:5px;">
 			<button type="button" name="add" id="add" class="btn btn-success btn-xs">Agregar Nueva Persona</button>
 			</div>
+
+			<div align="left" style="margin-bottom:10px; margin-left:70px;">
+			Buscar por Nombre:<input type="text" class="input" name="serch" id="serch" >
+			</div>
+
 <?php
 			$pdo=$connect;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -145,35 +150,43 @@ $(document).ready(function(){
 
 	/*load_data();
     
-	function load_data()
+function load_data()
 	{
-		location.href = "index.php";
-		/*$.ajax({
+//		location.href = "index.php";
+var key = $( "#serch" ).val();
+		$.ajax({
 			url:"fetch.php",
 			method:"POST",
+			data:{key:key},
 			success:function(data)
 			{
-				$this.html();
-				$("#user_dete").html(dete);
+				//$this.html();
+				//alert(data)
+				$("#user_data").html(data);
 			}
 		});
-	}*/
-
+	}
+*/
 	
 
-   
-/*/
-    $('#user_data').pagination({
-        dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 195],
-        callback: function(data, pagination) {
-            // template method of yourself
-            var html = template(data);
-            dataContainer.html(html);
-        }
-    })
-*/
 
 
+
+$( "#serch" ).keyup(function(event) {
+
+	var key = $( "#serch" ).val();
+		$.ajax({
+			url:"fetch.php",
+			method:"POST",
+			data:{key:key},
+			success:function(data)
+			{
+				//$this.html();
+				//alert(data)
+				$("#user_data").html(data);
+			}
+		});
+});
 
 	
 	$("#user_dialog").dialog({

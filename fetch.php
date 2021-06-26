@@ -5,7 +5,11 @@
 
 include("database_connection.php");
 
-$query = "SELECT * FROM tbl_sample";
+$key=$_POST['key'];
+    $query = "
+		SELECT * FROM tbl_sample WHERE first_name LIKE '%{$key}%'
+		";
+//$query = "SELECT * FROM tbl_sample";
 $statement = $connect->prepare($query);
 $statement->execute();
 $result = $statement->fetchAll();
