@@ -24,8 +24,8 @@ $statement->execute();
 $result = $statement->fetchAll();
 $total_row = $statement->rowCount();
 $output = '
-<table  id="teble" class="table table-striped table-bordered">
-	<tbody>
+<table  id="teble" class="display" style="width:100%">
+	<thead>
 	<tr>
 		<th>#</th>
 		<th>Nombre</th>
@@ -34,6 +34,8 @@ $output = '
 		<th>Editar</th>
 		<th>Eliminar</th>
 	</tr>
+	</thead>
+	<tbody>
 ';
 if($total_row > 0)
 {

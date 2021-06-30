@@ -13,6 +13,10 @@ include("database_connection.php");?>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
    --> 
    <script src="paginate.js" type="text/javascript"></script>
+
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 </head>  
     <body>  
         <div class="container">
@@ -24,9 +28,9 @@ include("database_connection.php");?>
 			<button type="button" name="add" id="add" class="btn btn-success btn-xs">Agregar Nueva Persona</button>
 			</div>
 
-			<div align="left" style="margin-bottom:10px; margin-left:70px;">
+			<!--<div align="left" style="margin-bottom:10px; margin-left:70px;">
 			Buscar por Nombre:<input type="text" class="input" name="serch" id="serch" >
-			</div>
+			</div>-->
 			<div class="table-responsive" id="user_data">
 				
 			</div>
@@ -95,7 +99,10 @@ function load_data()
 				//$this.html();
 				//alert(data)
 				$("#user_data").html(data);
-				let options = {
+				$("#teble").DataTable( {
+        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]]
+    });
+			/*	let options = {
         numberPerPage:4, //Cantidad de datos por pagina
         goBar:true, //Barra donde puedes digitar el numero de la pagina al que quiere ir
         pageCounter:true, //Contador de paginas, en cual estas, de cuantas paginas
@@ -106,7 +113,7 @@ function load_data()
     };
 
     paginate.init('#teble',options,filterOptions);
-
+*/
 			}
 		});
 	}
@@ -239,8 +246,8 @@ function load_data()
 				$(this).dialog('close');
 				//$( "#serch" ).val("");
 				//$("#user_data").html("");
-				//load_data();
-				location.href = "index.php";
+				load_data();
+				//location.href = "index.php";
 			}
 		}
 	});
