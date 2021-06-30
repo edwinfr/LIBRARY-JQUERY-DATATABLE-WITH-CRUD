@@ -11,8 +11,8 @@ include("database_connection.php");?>
 		<script src="jquery-ui.js"></script>
 		<!--<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-   --> 
-   <script src="paginate.js" type="text/javascript"></script>
+    
+   <script src="paginate.js" type="text/javascript"></script>-->
 
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
  
