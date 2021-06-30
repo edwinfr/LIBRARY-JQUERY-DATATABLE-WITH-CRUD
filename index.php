@@ -11,7 +11,7 @@ include("database_connection.php");?>
 		<script src="jquery-ui.js"></script>
 		<!--<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    
+  //  https://datatables.net/
    <script src="paginate.js" type="text/javascript"></script>-->
 
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
@@ -100,15 +100,17 @@ function load_data()
 				//alert(data)
 				$("#user_data").html(data);
 				$("#teble").DataTable( {
-        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
-		"language": {
+        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "Todos"]],
+		/*"language": {
             "lengthMenu": "Mostrar _MENU_ filas por pagina",
             "zeroRecords": "Nada encontrado - lo siento",
             "info": "Mostrando pagina _PAGE_ de _PAGES_",
             "infoEmpty": "Ningun dato disponible",
             "infoFiltered": "(filtrado de _MAX_  filas)",
 			"search":"Buscar :",
-        	},
+        	},*/ "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        },
 			"pagingType": "full_numbers"
     	});
 			/*	let options = {
