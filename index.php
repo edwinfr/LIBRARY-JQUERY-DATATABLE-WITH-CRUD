@@ -100,8 +100,17 @@ function load_data()
 				//alert(data)
 				$("#user_data").html(data);
 				$("#teble").DataTable( {
-        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]]
-    });
+        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
+		"language": {
+            "lengthMenu": "Mostrar _MENU_ filas por pagina",
+            "zeroRecords": "Nada encontrado - lo siento",
+            "info": "Mostrando pagina _PAGE_ de _PAGES_",
+            "infoEmpty": "Ningun dato disponible",
+            "infoFiltered": "(filtrado de _MAX_  filas)",
+			"search":"Buscar :",
+        	},
+			"pagingType": "full_numbers"
+    	});
 			/*	let options = {
         numberPerPage:4, //Cantidad de datos por pagina
         goBar:true, //Barra donde puedes digitar el numero de la pagina al que quiere ir
