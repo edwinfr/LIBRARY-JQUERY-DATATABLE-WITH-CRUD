@@ -48,10 +48,10 @@ if($total_row > 0)
 			<td width="40%">'.$row["email"].'</td>
 			<td width="40%" style=" text-align: left;" >$ '.$row["salary"].'</td>
 			<td width="10%">
-				<button type="button" name="edit" class="btn btn-primary btn-xs edit" id="'.$row["id"].'">Editar</button>
+				<button type="button" name="edit" class="btn btn-primary btn-xs edit" id="'.$row["id"].'"><h4>Editar</h4></button>
 			</td>
 			<td width="10%">
-				<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'"  val="'.$row["first_name"].' '.$row["email"].'">Eliminar</button>
+				<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'"  val="'.$row["first_name"].' '.$row["email"].'"><h4>Eliminar</h4></button>
 			</td>
 		</tr>
 		
