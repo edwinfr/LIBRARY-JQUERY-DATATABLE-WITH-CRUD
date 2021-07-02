@@ -9,16 +9,16 @@ include("database_connection.php");?>
 		<script src="jquery.min.js"></script>
 		<script src="typeahead.bundle.js"></script>
 		<script src="jquery-ui.js"></script>
-		<!--<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-  //  https://datatables.net/
+		
+ <!--  https://datatables.net/
    <script src="paginate.js" type="text/javascript"></script>-->
 
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
  
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>  
     <body style="background-color:lightblue;">  
         <div class="container">

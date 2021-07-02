@@ -1,22 +1,7 @@
-
-
-<html>  
-  <head>  
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    </head> 
-
 <?php
 //include 'index.php';
 //fetch.php
-
 include("database_connection.php");
-
-
-
-$key=$_POST['key'];
-//if($key!=""){
-$key=$_POST['key'];
 //    $query = "SELECT * FROM tbl_sample WHERE first_name LIKE '%{$key}%'";
 $query = "SELECT * FROM tbl_sample";
 $statement = $connect->prepare($query);
